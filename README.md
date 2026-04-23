@@ -5,11 +5,11 @@
 #### Mirim Meister High. Software major<br>
 ### 🛠️ What I can do
 
-| **Category** | **Skills** | **Focus** |
-| :--- | :--- | :--- |
-| **Software** | Frontend (HTML/CSS/JS), Backend (Java/Python) | Web & Interaction |
-| **Design** | UI/UX Design, Graphic Design | Visual Identity & Prototyping |
-| **Creative** | Video Editing | Creative Content |
+| **Category** | **Skills** | 
+| :--- | :--- | 
+| **Software** | Frontend (HTML/CSS/JS), Backend (Java/Python) |
+| **Design** | UI/UX Design, Graphic Design |
+| **Creative** | Video Editing |
 
   
 ### 💻 Software Development
