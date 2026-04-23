@@ -7,7 +7,7 @@
 
 | **Category** | **Skills** | **Focus** |
 | :--- | :--- | :--- |
-| **Development** | Frontend (HTML/CSS/JS/TS), Backend (Java/Python) | Web & Interaction |
+| **Software** | Frontend (HTML/CSS/JS), Backend (Java/Python) | Web & Interaction |
 | **Design** | UI/UX Design, Graphic Design | Visual Identity & Prototyping |
 | **Creative** | Video Editing | Creative Content |
 
