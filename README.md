@@ -1,8 +1,9 @@
 <div align=""> 
   
 # 안녕하세요 👋
+### 풀스택 개발자가 목표이며 계속해서 성장중인 프론트엔드와 백엔드 개발자인 율입니다.
 
-#### Mirim Meister High. Software major<br>
+##### Mirim Meister High. Software major<br>
 ### 🛠️ What I can do
 
 | **Category** | **Skills** | 
