@@ -31,8 +31,7 @@
 <img src="https://img.shields.io/badge/Adobe%20Premiere%20Pro-9999FF?style=for-the-badge&logo=adobepremierepro&logoColor=white">
 
 ### 🛠️ Language Statistics
-[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=justgivemethespotlight&layout=compact&hide_border=true&theme=transparent&title_color=FFFFFF&text_color=FFFFFF&icon_color=FFFFFF)](https://github.com/anuraghazra/github-readme-stats)
-  
+[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=justgivemethespotlight&layout=compact&hide_border=true&theme=transparent&title_color=FFFFFF&text_color=FFFFFF&icon_color=FFFFFF&count_private=true)](https://github.com/anuraghazra/github-readme-stats)  
 </div>
 
 
