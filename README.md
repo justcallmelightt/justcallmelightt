@@ -30,9 +30,6 @@
 <img src="https://img.shields.io/badge/Adobe%20Photoshop-31A8FF?style=for-the-badge&logo=adobephotoshop&logoColor=white">
 <img src="https://img.shields.io/badge/Adobe%20Premiere%20Pro-9999FF?style=for-the-badge&logo=adobepremierepro&logoColor=white">
 
-### 🛠️ Language Statistics
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=justgivemethespotlight&layout=compact&hide_border=true&theme=transparent&title_color=FFFFFF&text_color=FFFFFF&icon_color=FFFFFF" alt="Top Langs" />
-
 
 <!--
 **justgivemethespotlight/justgivemethespotlight** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
