@@ -2,14 +2,14 @@
   
 # 안녕하세요 👋
 
-##### Mirim Meister High. S/W major<br>
+##### Mirim Meister High. Department of New Media Software, Media/Software/Design major.<br>
 ### 🛠️ What I can do
 
 | **Category** | **Skills** | 
 | :--- | :--- | 
 | **Software** | Front-end (HTML/CSS/JS), Back-end (Java/Python) |
 | **Design** | UI/UX Design, Graphic Design |
-| **Creative** | Video Editing |
+| **Media** | Video Editing |
 
   
 ### 💻 Software
