@@ -2,7 +2,7 @@
   
 # 안녕하세요 👋
 
-##### Mirim Meister High. Software major<br>
+##### Mirim Meister High. S/W major<br>
 ### 🛠️ What I can do
 
 | **Category** | **Skills** | 
