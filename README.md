@@ -2,7 +2,7 @@
   
 # 안녕하세요 👋
 
-##### Mirim Meister High. S/W 26<br>
+##### Mirim Meister S/W 26<br>
 ### 🛠️ What I can do
 
 | **Category** | **Skills** | 
