@@ -2,7 +2,7 @@
   
 # 안녕하세요 👋
 
-##### Mirim Meister High. Department of New Media Software<br>
+##### Mirim Meister High. S/W 26<br>
 ### 🛠️ What I can do
 
 | **Category** | **Skills** | 
