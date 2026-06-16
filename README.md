@@ -9,7 +9,7 @@
 
 
 
-##  <img src="./assets/Finder.png" width="22" align="center"> `justcallmelight / Workspace`
+##  <img src="./assets/Finder.png" width="22" align="center"> `/Users/justcallmelight_/Workspace`
 
 
 
