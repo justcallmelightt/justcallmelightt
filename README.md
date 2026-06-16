@@ -5,11 +5,13 @@
 ### Mirim Meister S/W 26<br>
 ### 🛠️ What I can do
 
-| **Category** | **Skills** | 
+| **Category** | **Skills** |  
 | :--- | :--- | 
 | **Software** | Front-end (HTML/CSS/JS), Back-end (Java/Python) |
 | **Design** | UI/UX Design, Graphic Design, New Media Design |
 | **Media** | Video Editing |
+
+
 
   
 ### 💻 Software
@@ -21,13 +23,14 @@
 <img src="https://img.shields.io/badge/Swift-F05138?style=for-the-badge&logo=swift&logoColor=white"> 
 <img src="https://img.shields.io/badge/Lua-000080?style=for-the-badge&logo=lua&logoColor=white"> 
 <img src="https://img.shields.io/badge/GDScript-478CBF?style=for-the-badge&logo=godot-engine&logoColor=white"> 
-<img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white"> <br>
+<img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white"> <br> <br>
+
+![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=justgivemethespotlight&layout=compact&bg_color=0d1117&title_color=ffffff&text_color=c9d1d9&icon_color=ffffff&border_color=30363d)
 
 ### 🎨 Design & Creative
 <img src="https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white">
 <img src="https://img.shields.io/badge/Adobe%20Photoshop-31A8FF?style=for-the-badge&logo=adobephotoshop&logoColor=white">
-<img src="https://img.shields.io/badge/Adobe%20Premiere%20Pro-9999FF?style=for-the-badge&logo=adobepremierepro&logoColor=white">
-
+<img src="https://img.shields.io/badge/Adobe%20Premiere%20Pro-9999FF?style=for-the-badge&logo=adobepremierepro&logoColor=white"> <br> <br>
 
 <!--
 **justgivemethespotlight/justgivemethespotlight** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
