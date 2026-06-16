@@ -1,6 +1,6 @@
 <div align=""> 
   
-# 안녕하세요 👋
+# Hello, World! 👋
 
 ### Mirim Meister S/W 26<br>
 ### 🛠️ What I can do
