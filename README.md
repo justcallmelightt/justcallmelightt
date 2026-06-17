@@ -1,3 +1,5 @@
+![Lightframe Banner](LightframeBanner.png)
+
 # "Hello, World!" 👋
 
 ### Mirim Meister S/W 26
