@@ -12,4 +12,4 @@
 ### 🎨 `7px #ffffff`
 <img src="https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white"> <img src="https://img.shields.io/badge/Adobe%20Photoshop-31A8FF?style=for-the-badge&logo=adobephotoshop&logoColor=white"> <img src="https://img.shields.io/badge/Adobe%20Premiere%20Pro-9999FF?style=for-the-badge&logo=adobepremierepro&logoColor=white"> <br> <br>
 
-![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=justgivemethespotlight&layout=compact&bg_color=0d1117&title_color=ffffff&text_color=c9d1d9&icon_color=ffffff&border_color=30363d)
+![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=justcallmelightt&layout=compact&bg_color=0d1117&title_color=ffffff&text_color=c9d1d9&icon_color=ffffff&border_color=30363d)
