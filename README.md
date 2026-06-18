@@ -1,10 +1,8 @@
-![Lightframe Banner](LightframeBanner.png)
-
 # "Hello, World!" 👋
 
 ### Mirim Meister S/W 26
 
-##  <img src="./assets/Finder.png" width="22" align="center"> `/Users/justcallmelight_/Workspace`
+## `/Users/justcallmelight_/Workspace`
 
 
 
