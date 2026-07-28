@@ -2,7 +2,7 @@
 
 # "Hello, World!" 👋
 
-#### <img src="assets/MirimMeisterSchool.png" height="20px" valign="middle"> `System.out.print("미림마이스터고등학교 뉴미디어소프트웨어과 권율입니다.")`
+### <img src="assets/MirimMeisterSchool.png" height="20px" valign="middle"> `System.out.print("미림마이스터고등학교 뉴미디어소프트웨어과 권율입니다.")`
 ## <img src="assets/Finder.png" height="20px" valign="middle"> `/Users/justcallmelight_/Workspace` 
 
 ### <img src="assets/VisualStudioCode.png" height="20px" valign="middle"> `print(mySW_Stack)`
