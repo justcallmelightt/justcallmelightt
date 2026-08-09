@@ -16,4 +16,4 @@
 <img src="https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white"> <img src="https://img.shields.io/badge/Adobe%20Photoshop-31A8FF?style=for-the-badge&logo=adobephotoshop&logoColor=white"> <img src="https://img.shields.io/badge/Adobe%20Premiere%20Pro-9999FF?style=for-the-badge&logo=adobepremierepro&logoColor=white"> <br> <br>
 
 ### `3D Commit Skyline`
-<img src="https://raw.githubusercontent.com/justcallmelightt/justcallmelightt/main/profile-3d-contrib/profile-tokyonight.svg" width="100%">
+<img src="https://raw.githubusercontent.com/justcallmelightt/justcallmelightt/main/profile-3d-contrib/profile-night-view.svg" width="100%">
