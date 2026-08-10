@@ -17,3 +17,11 @@
 
 ### `3D Commit Skyline`
 <img src="https://raw.githubusercontent.com/justcallmelightt/justcallmelightt/main/profile-3d-contrib/profile-night-view.svg" width="100%">
+
+### 📊
+<!-- 안정적인 다른 도구로 대체한 잔디 그래프입니다 -->
+![justcallmelightt's Contribution Graph](https://vercel.app)
+
+### 📈
+<!-- 우회 주소를 사용하여 엑박을 해결한 스탯 카드입니다 -->
+![justcallmelightt's GitHub Stats](https://vercel.app)
