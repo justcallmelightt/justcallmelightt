@@ -4,6 +4,7 @@
 
 ### <img src="assets/MirimMeisterSchool.png" height="20px" valign="middle"> `print("미림마이스터고등학교 뉴미디어소프트웨어과 권율입니다.")`
 ```diff
+// About Me
 - 그냥 소프트웨어 전공입니다.
 + 미림마이스터고 재학 중이며 창업 경험과 초등학생 때부터 이어온 역량을 바탕으로, 소프트웨어·디자인의 디테일을 완벽하게 다듬습니다.
 
