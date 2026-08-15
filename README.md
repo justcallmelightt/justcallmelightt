@@ -7,7 +7,7 @@
 // About Me
 - 소프트웨어 전공입니다.
 + 미림마이스터고에 재학 중이며 창업 경험과 초등학생 때부터 이어온 역량을 바탕으로, 소프트웨어·디자인의 디테일을 완벽하게 다듬습니다.
-
++ 보안, UI/UX, 디자인 철학을 최우선으로 두며, 이를 이상적으로 구현해내기 위한 도구로서 소프트웨어를 다룹니다.
 ```
 ## <img src="assets/Finder.png" height="20px" valign="middle"> `/Users/justcallmelight_/Workspace` 
 
