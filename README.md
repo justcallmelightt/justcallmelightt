@@ -1,5 +1,11 @@
 ![Lightframe.](assets/LightframeBanner.png)
 
+<div align="center">
+
+ <img src="./contrib-heatmap.svg" width="860" alt="justcallmelightt GitHub contribution heatmap" />
+
+</div>
+
 # "Hello, World!" 👋
 
 ### <img src="assets/MirimMeisterSchool.png" height="20px" valign="middle"> `print("미림마이스터고등학교 뉴미디어소프트웨어과 권율입니다.")`
