@@ -26,9 +26,9 @@ CELL = 10
 GAP = 4
 STEP = CELL + GAP
 LEFT = 42
-TOP = 54
+TOP = 28
 WIDTH = 860
-HEIGHT = 204
+HEIGHT = 174
 
 
 def parse_args() -> argparse.Namespace:
@@ -87,19 +87,18 @@ def render(payload: dict[str, object], font_data: str, static: bool = False) -> 
             continue
         x, y = LEFT + week * STEP, TOP + weekday * STEP
         level = max(0, min(4, int(day["level"])))
-        delay = min(0.78, week * 0.011 + weekday * 0.022)
-        style = "" if static else f' style="--delay:{delay:.3f}s"'
-        shine = "" if level == 0 else (
-            f'<path class="shine shine-{level}" d="M{x + 2} {y + 1.5}h{CELL - 4}"/>'
-        )
+        delay = week * 0.034 + weekday * 0.024
+        peak = 1.18 + level * 0.18
+        style = "" if static else f' style="--delay:{delay:.3f}s;--peak:{peak:.2f}"'
+        state = "empty" if level == 0 else "active"
         cells.append(
-            f'<g class="cell"{style}><rect class="day level-{level}" x="{x}" y="{y}" '
-            f'width="{CELL}" height="{CELL}" rx="3"><title>{esc(current.isoformat())}: '
-            f'{esc(day["count"])} contributions</title></rect>{shine}</g>'
+            f'<rect class="cell {state} level-{level}" x="{x}" y="{y}" width="{CELL}" '
+            f'height="{CELL}" rx="1.5"{style}><title>{esc(current.isoformat())}: '
+            f'{esc(day["count"])} contributions</title></rect>'
         )
 
     months = "".join(
-        f'<text class="month" x="{x}" y="43">{esc(label)}</text>'
+        f'<text class="month" x="{x}" y="18">{esc(label)}</text>'
         for x, label in month_labels(first_sunday, last_date)
     )
     weekdays = "".join(
@@ -107,23 +106,22 @@ def render(payload: dict[str, object], font_data: str, static: bool = False) -> 
         for row, label in ((1, "Mon"), (3, "Wed"), (5, "Fri"))
     )
     legend = "".join(
-        f'<rect class="level-{level}" x="{704 + level * 15}" y="177" width="10" height="10" rx="3"/>'
+        f'<rect class="level-{level}" x="{704 + level * 15}" y="145" width="10" height="10" rx="1.5"/>'
         for level in range(5)
     )
-    animation_css = (
-        "    .shine { opacity: var(--shine); }"
-        if static
-        else "\n".join((
-            "    .cell { opacity: 0; transform: translateY(9px) scale(.68); filter: blur(2.5px); animation: settle .56s cubic-bezier(.16,1,.3,1) var(--delay) forwards; }",
-            "    @keyframes settle { 62% { opacity: 1; transform: translateY(-.7px) scale(1.025); filter: blur(0); } 100% { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); } }",
-            "    .shine { opacity: 0; animation: catch-light .28s ease-out calc(var(--delay) + .18s) forwards; }",
-            "    @keyframes catch-light { to { opacity: var(--shine); } }",
+    animation_css = "" if static else "\n".join(
+        (
+            "    .cell { opacity: 0; }",
+            "    .empty { animation: reveal-empty .38s cubic-bezier(.2,.8,.2,1) var(--delay) both; }",
+            "    .active { animation: pop .58s cubic-bezier(.16,1,.3,1) var(--delay) both, flash .74s ease-out var(--delay) both; }",
+            "    @keyframes reveal-empty { from { opacity: 0; transform: scale(.72); } to { opacity: 1; transform: scale(1); } }",
+            "    @keyframes pop { 0% { opacity: 0; transform: scale(.18); } 58% { opacity: 1; transform: scale(1.08); } 100% { opacity: 1; transform: scale(1); } }",
+            "    @keyframes flash { 0%, 38% { filter: brightness(var(--peak)); } 100% { filter: brightness(1); } }",
             "    @media (prefers-reduced-motion: reduce) {",
             "      .cell { transform: none; filter: none; animation: fade .15s ease-out forwards; }",
-            "      .shine { animation: none; opacity: var(--shine); }",
             "      @keyframes fade { to { opacity: 1; } }",
             "    }",
-        ))
+        )
     )
     return f'''<svg xmlns="http://www.w3.org/2000/svg" width="{WIDTH}" height="{HEIGHT}" viewBox="0 0 {WIDTH} {HEIGHT}" role="img" aria-labelledby="title desc">
   <title id="title">{username}'s GitHub contribution heatmap</title>
@@ -132,33 +130,26 @@ def render(payload: dict[str, object], font_data: str, static: bool = False) -> 
     @font-face {{ font-family: "Pretendard Embedded"; src: url("data:font/woff2;base64,{font_data}") format("woff2"); font-weight: 45 920; font-style: normal; }}
     :root {{ color-scheme: light dark; }}
     text {{ font-family: "Pretendard Embedded", Pretendard, -apple-system, BlinkMacSystemFont, sans-serif; fill: #8b949e; }}
-    .heading {{ fill: #f0f6fc; font-size: 14px; font-weight: 680; letter-spacing: -.025em; }}
-    .range {{ font-size: 10px; font-weight: 500; letter-spacing: .01em; }}
     .month, .weekday, .legend-label {{ font-size: 10px; font-weight: 500; letter-spacing: -.01em; }}
     .summary {{ fill: #c9d1d9; font-size: 11px; font-weight: 600; letter-spacing: -.015em; }}
     .level-0 {{ fill: {DARK_PALETTE[0]}; }} .level-1 {{ fill: {DARK_PALETTE[1]}; }}
     .level-2 {{ fill: {DARK_PALETTE[2]}; }} .level-3 {{ fill: {DARK_PALETTE[3]}; }}
     .level-4 {{ fill: {DARK_PALETTE[4]}; }}
-    .cell {{ transform-box: fill-box; transform-origin: center; }}
-    .day {{ stroke: rgba(255,255,255,.055); stroke-width: .7; }}
-    .shine {{ fill: none; stroke: rgba(255,255,255,.34); stroke-width: .65; stroke-linecap: round; }}
-    .shine-1 {{ --shine: .18; }} .shine-2 {{ --shine: .24; }} .shine-3 {{ --shine: .32; }} .shine-4 {{ --shine: .42; }}
+    .cell {{ transform-box: fill-box; transform-origin: center; stroke: rgba(255,255,255,.045); stroke-width: .5; }}
 {animation_css}
     @media (prefers-color-scheme: light) {{
-      text {{ fill: #57606a; }} .heading {{ fill: #24292f; }} .summary {{ fill: #424a53; }}
+      text {{ fill: #57606a; }} .summary {{ fill: #424a53; }}
       .level-0 {{ fill: {LIGHT_PALETTE[0]}; }} .level-1 {{ fill: {LIGHT_PALETTE[1]}; }}
       .level-2 {{ fill: {LIGHT_PALETTE[2]}; }} .level-3 {{ fill: {LIGHT_PALETTE[3]}; }}
       .level-4 {{ fill: {LIGHT_PALETTE[4]}; }}
-      .day {{ stroke: rgba(27,31,36,.06); }} .shine {{ stroke: rgba(255,255,255,.72); }}
+      .cell {{ stroke: rgba(27,31,36,.055); }}
     }}
   </style>
-  <text class="heading" x="8" y="18">Contribution activity</text>
-  <text class="range" x="620" y="18">{esc(first_sunday)} — {esc(last_date)}</text>
   {months}
   {weekdays}
   <g aria-label="Contribution days">{''.join(cells)}</g>
-  <text class="summary" x="8" y="187">{esc(stats['total'])} contributions  ·  {esc(stats['current_streak'])} day streak  ·  longest {esc(stats['longest_streak'])} days  ·  best {esc(stats['best_day']['count'])} on {esc(short_date(stats['best_day']['date']))}</text>
-  <text class="legend-label" x="672" y="187">Less</text>{legend}<text class="legend-label" x="784" y="187">More</text>
+  <text class="summary" x="8" y="155">{esc(stats['total'])} contributions  ·  {esc(stats['current_streak'])} day streak  ·  longest {esc(stats['longest_streak'])} days  ·  best {esc(stats['best_day']['count'])} on {esc(short_date(stats['best_day']['date']))}</text>
+  <text class="legend-label" x="672" y="155">Less</text>{legend}<text class="legend-label" x="784" y="155">More</text>
 </svg>'''
 
 
