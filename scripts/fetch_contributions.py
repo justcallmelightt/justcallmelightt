@@ -127,6 +127,14 @@ def main() -> None:
         "days": days,
         "stats": derive_stats(days),
     }
+    if args.output.exists():
+        try:
+            previous = json.loads(args.output.read_text(encoding="utf-8"))
+            comparable_keys = ("username", "range", "days", "stats")
+            if all(previous.get(key) == payload.get(key) for key in comparable_keys):
+                payload["generated_at"] = previous.get("generated_at", payload["generated_at"])
+        except (json.JSONDecodeError, OSError):
+            pass
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(f"Saved {len(days)} days for {args.username} to {args.output}")
