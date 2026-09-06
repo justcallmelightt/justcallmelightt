@@ -4,8 +4,6 @@
 
  <img src="./contrib-heatmap.svg" width="860" alt="justcallmelightt GitHub contribution heatmap" />
 
-<sub>Public GitHub activity · refreshed daily at 06:17 UTC</sub>
-
 </div>
 
 # "Hello, World!" 👋
