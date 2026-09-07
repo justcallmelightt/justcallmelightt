@@ -20,7 +20,7 @@ FONT_URL = (
     "packages/pretendard-std/dist/web/variable/woff2/PretendardStdVariable.woff2"
 )
 EMBEDDED_FONT_PATTERN = re.compile(r"data:font/woff2;base64,([A-Za-z0-9+/=]+)")
-DARK_PALETTE = ["#161b22", "#0e4429", "#006d32", "#26a641", "#39d353"]
+DARK_PALETTE = ["#191e25", "#0e4429", "#006d32", "#26a641", "#39d353"]
 LIGHT_PALETTE = ["#ebedf0", "#9be9a8", "#40c463", "#30a14e", "#216e39"]
 CELL = 10
 GAP = 4
@@ -87,9 +87,9 @@ def render(payload: dict[str, object], font_data: str, static: bool = False) -> 
             continue
         x, y = LEFT + week * STEP, TOP + weekday * STEP
         level = max(0, min(4, int(day["level"])))
-        delay = week * 0.034 + weekday * 0.024
-        peak = 1.18 + level * 0.18
-        style = "" if static else f' style="--delay:{delay:.3f}s;--peak:{peak:.2f}"'
+        delay = round(round(week * 0.034 + weekday * 0.024, 3) * 0.8, 3)
+        peak = round(1 + (round(1.18 + level * 0.18, 2) - 1) * 0.32, 3)
+        style = "" if static else f' style="--delay:{delay}s;--peak:{peak}"'
         state = "empty" if level == 0 else "active"
         cells.append(
             f'<rect class="cell {state} level-{level}" x="{x}" y="{y}" width="{CELL}" '
@@ -113,9 +113,9 @@ def render(payload: dict[str, object], font_data: str, static: bool = False) -> 
         (
             "    .cell { opacity: 0; }",
             "    .empty { animation: reveal-empty .38s cubic-bezier(.2,.8,.2,1) var(--delay) both; }",
-            "    .active { animation: pop .58s cubic-bezier(.16,1,.3,1) var(--delay) both, flash .74s ease-out var(--delay) both; }",
-            "    @keyframes reveal-empty { from { opacity: 0; transform: scale(.72); } to { opacity: 1; transform: scale(1); } }",
-            "    @keyframes pop { 0% { opacity: 0; transform: scale(.18); } 58% { opacity: 1; transform: scale(1.08); } 100% { opacity: 1; transform: scale(1); } }",
+            "    .active { animation: pop .58s cubic-bezier(.16,1,.3,1) var(--delay) both, flash .52s ease-out var(--delay) both; }",
+            "    @keyframes reveal-empty { from { opacity: 0; transform: scale(.96); } to { opacity: 1; transform: scale(1); } }",
+            "    @keyframes pop { 0% { opacity: 0; transform: scale(.82); } 72% { opacity: 1; transform: scale(1); } 100% { opacity: 1; transform: scale(1); } }",
             "    @keyframes flash { 0%, 38% { filter: brightness(var(--peak)); } 100% { filter: brightness(1); } }",
             "    @media (prefers-reduced-motion: reduce) {",
             "      .cell { transform: none; filter: none; animation: fade .15s ease-out forwards; }",
@@ -131,7 +131,7 @@ def render(payload: dict[str, object], font_data: str, static: bool = False) -> 
     :root {{ color-scheme: light dark; }}
     text {{ font-family: "Pretendard Embedded", Pretendard, -apple-system, BlinkMacSystemFont, sans-serif; fill: #8b949e; }}
     .month, .weekday, .legend-label {{ font-size: 10px; font-weight: 500; letter-spacing: -.01em; }}
-    .summary {{ fill: #c9d1d9; font-size: 11px; font-weight: 600; letter-spacing: -.015em; }}
+    .summary {{ fill: #c9d1d9; font-size: 11px; font-weight: 450; letter-spacing: -.015em; }}
     .level-0 {{ fill: {DARK_PALETTE[0]}; }} .level-1 {{ fill: {DARK_PALETTE[1]}; }}
     .level-2 {{ fill: {DARK_PALETTE[2]}; }} .level-3 {{ fill: {DARK_PALETTE[3]}; }}
     .level-4 {{ fill: {DARK_PALETTE[4]}; }}
@@ -148,7 +148,7 @@ def render(payload: dict[str, object], font_data: str, static: bool = False) -> 
   {months}
   {weekdays}
   <g aria-label="Contribution days">{''.join(cells)}</g>
-  <text class="summary" x="8" y="155">{esc(stats['total'])} contributions  ·  {esc(stats['current_streak'])} day streak  ·  longest {esc(stats['longest_streak'])} days  ·  best {esc(stats['best_day']['count'])} on {esc(short_date(stats['best_day']['date']))}</text>
+  <text class="summary" x="8" y="155"><tspan font-weight="700">{esc(stats['total'])}</tspan> contributions  ·  {esc(stats['current_streak'])} day streak  ·  longest {esc(stats['longest_streak'])} days  ·  best {esc(stats['best_day']['count'])} on {esc(short_date(stats['best_day']['date']))}</text>
   <text class="legend-label" x="672" y="155">Less</text>{legend}<text class="legend-label" x="784" y="155">More</text>
 </svg>'''
 
